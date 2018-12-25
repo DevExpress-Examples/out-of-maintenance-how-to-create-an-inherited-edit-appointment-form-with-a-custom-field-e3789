@@ -32,14 +32,14 @@
             DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
             DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
             this.schedulerControl1 = new DevExpress.XtraScheduler.SchedulerControl();
-            this.schedulerStorage1 = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
+            this.schedulerDataStorage1 = new DevExpress.XtraScheduler.SchedulerDataStorage(this.components);
             this.carSchedulingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carsDBDataSet = new SchedulerInheritedAppointmentForm.CarsDBDataSet();
             this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carSchedulingTableAdapter = new SchedulerInheritedAppointmentForm.CarsDBDataSetTableAdapters.CarSchedulingTableAdapter();
             this.carsTableAdapter = new SchedulerInheritedAppointmentForm.CarsDBDataSetTableAdapters.CarsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schedulerStorage1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carSchedulingBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
@@ -57,36 +57,36 @@
             this.schedulerControl1.OptionsView.ResourceHeaders.ImageSizeMode = DevExpress.XtraScheduler.HeaderImageSizeMode.ZoomImage;
             this.schedulerControl1.Size = new System.Drawing.Size(897, 482);
             this.schedulerControl1.Start = new System.DateTime(2008, 10, 24, 0, 0, 0, 0);
-            this.schedulerControl1.Storage = this.schedulerStorage1;
+            this.schedulerControl1.DataStorage = this.schedulerDataStorage1;
             this.schedulerControl1.TabIndex = 0;
             this.schedulerControl1.Text = "schedulerControl1";
             this.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler1);
             this.schedulerControl1.Views.WorkWeekView.TimeRulers.Add(timeRuler2);
             this.schedulerControl1.EditAppointmentFormShowing += new DevExpress.XtraScheduler.AppointmentFormEventHandler(this.schedulerControl1_EditAppointmentFormShowing);
             // 
-            // schedulerStorage1
+            // schedulerDataStorage1
             // 
-            this.schedulerStorage1.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("Field1", "Price"));
-            this.schedulerStorage1.Appointments.DataSource = this.carSchedulingBindingSource;
-            this.schedulerStorage1.Appointments.Mappings.AllDay = "AllDay";
-            this.schedulerStorage1.Appointments.Mappings.Description = "Description";
-            this.schedulerStorage1.Appointments.Mappings.End = "EndTime";
-            this.schedulerStorage1.Appointments.Mappings.Label = "Label";
-            this.schedulerStorage1.Appointments.Mappings.Location = "Location";
-            this.schedulerStorage1.Appointments.Mappings.RecurrenceInfo = "RecurrenceInfo";
-            this.schedulerStorage1.Appointments.Mappings.ReminderInfo = "ReminderInfo";
-            this.schedulerStorage1.Appointments.Mappings.ResourceId = "CarId";
-            this.schedulerStorage1.Appointments.Mappings.Start = "StartTime";
-            this.schedulerStorage1.Appointments.Mappings.Status = "Status";
-            this.schedulerStorage1.Appointments.Mappings.Subject = "Subject";
-            this.schedulerStorage1.Appointments.Mappings.Type = "EventType";
-            this.schedulerStorage1.Resources.DataSource = this.carsBindingSource;
-            this.schedulerStorage1.Resources.Mappings.Caption = "Model";
-            this.schedulerStorage1.Resources.Mappings.Id = "ID";
-            this.schedulerStorage1.Resources.Mappings.Image = "Picture";
-            this.schedulerStorage1.AppointmentsChanged += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.AppointmentsModified);
-            this.schedulerStorage1.AppointmentsInserted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.AppointmentsModified);
-            this.schedulerStorage1.AppointmentsDeleted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.AppointmentsModified);
+            this.schedulerDataStorage1.Appointments.CustomFieldMappings.Add(new DevExpress.XtraScheduler.AppointmentCustomFieldMapping("Field1", "Price"));
+            this.schedulerDataStorage1.Appointments.DataSource = this.carSchedulingBindingSource;
+            this.schedulerDataStorage1.Appointments.Mappings.AllDay = "AllDay";
+            this.schedulerDataStorage1.Appointments.Mappings.Description = "Description";
+            this.schedulerDataStorage1.Appointments.Mappings.End = "EndTime";
+            this.schedulerDataStorage1.Appointments.Mappings.Label = "Label";
+            this.schedulerDataStorage1.Appointments.Mappings.Location = "Location";
+            this.schedulerDataStorage1.Appointments.Mappings.RecurrenceInfo = "RecurrenceInfo";
+            this.schedulerDataStorage1.Appointments.Mappings.ReminderInfo = "ReminderInfo";
+            this.schedulerDataStorage1.Appointments.Mappings.ResourceId = "CarId";
+            this.schedulerDataStorage1.Appointments.Mappings.Start = "StartTime";
+            this.schedulerDataStorage1.Appointments.Mappings.Status = "Status";
+            this.schedulerDataStorage1.Appointments.Mappings.Subject = "Subject";
+            this.schedulerDataStorage1.Appointments.Mappings.Type = "EventType";
+            this.schedulerDataStorage1.Resources.DataSource = this.carsBindingSource;
+            this.schedulerDataStorage1.Resources.Mappings.Caption = "Model";
+            this.schedulerDataStorage1.Resources.Mappings.Id = "ID";
+            this.schedulerDataStorage1.Resources.Mappings.Image = "Picture";
+            this.schedulerDataStorage1.AppointmentsChanged += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.AppointmentsModified);
+            this.schedulerDataStorage1.AppointmentsInserted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.AppointmentsModified);
+            this.schedulerDataStorage1.AppointmentsDeleted += new DevExpress.XtraScheduler.PersistentObjectsEventHandler(this.AppointmentsModified);
             // 
             // carSchedulingBindingSource
             // 
@@ -119,10 +119,11 @@
             this.Controls.Add(this.schedulerControl1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "How to create an inherited edit appointment form with a custom field";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.schedulerStorage1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.schedulerDataStorage1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carSchedulingBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
@@ -134,7 +135,7 @@
 
         private DevExpress.XtraScheduler.SchedulerControl schedulerControl1;
         private CarsDBDataSet carsDBDataSet;
-        private DevExpress.XtraScheduler.SchedulerStorage schedulerStorage1;
+        private DevExpress.XtraScheduler.SchedulerDataStorage schedulerDataStorage1;
         private System.Windows.Forms.BindingSource carSchedulingBindingSource;
         private SchedulerInheritedAppointmentForm.CarsDBDataSetTableAdapters.CarSchedulingTableAdapter carSchedulingTableAdapter;
         private System.Windows.Forms.BindingSource carsBindingSource;

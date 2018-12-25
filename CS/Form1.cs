@@ -17,7 +17,7 @@ namespace SchedulerInheritedAppointmentForm {
         }
 
         void schedulerControl1_InitNewAppointment(object sender, AppointmentEventArgs e) {
-            e.Appointment.CustomFields["Field1"] = 20;
+            e.Appointment.CustomFields["Field1"] = 20; // this custom field contains a price
         }
 
         private void Form1_Load(object sender, EventArgs e) {
@@ -29,8 +29,8 @@ namespace SchedulerInheritedAppointmentForm {
             this.carSchedulingTableAdapter.Adapter.RowUpdated +=
                 new System.Data.OleDb.OleDbRowUpdatedEventHandler(Adapter_RowUpdated);
 
-            if (schedulerStorage1.Appointments.Count > 0)
-                schedulerControl1.Start = schedulerStorage1.Appointments[0].Start;
+            if (schedulerDataStorage1.Appointments.Count > 0)
+                schedulerControl1.Start = schedulerDataStorage1.Appointments[0].Start;
         }
 
         private void AppointmentsModified(object sender, DevExpress.XtraScheduler.PersistentObjectsEventArgs e) {
@@ -52,7 +52,7 @@ namespace SchedulerInheritedAppointmentForm {
             Appointment apt = e.Appointment;
 
             // Required to open the recurrence form via context menu.
-            bool openRecurrenceForm = apt.IsRecurring && schedulerStorage1.Appointments.IsNewAppointment(apt);
+            bool openRecurrenceForm = apt.IsRecurring && (schedulerDataStorage1 as ISchedulerStorage).Appointments.IsNewAppointment(apt);
 
             CustomAppointmentForm customForm = new CustomAppointmentForm(schedulerControl1, apt, openRecurrenceForm);
 

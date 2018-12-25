@@ -17,8 +17,6 @@ namespace SchedulerInheritedAppointmentForm {
             InitializeComponent();
 
             chkAllDay.Visible = false;
-
-            
         }
 
         protected override AppointmentFormController CreateController(SchedulerControl control, Appointment apt) {
